@@ -6,7 +6,7 @@ const path = require("path");
 const createErr = require("http-errors");
 const session = require("express-session");
 const dotenv = require('dotenv');
-// require("dotenv").config(path.join(__dirname, '.env'));
+
 // Load environment variables from the appropriate .env file
 console.log(process.env.NODE_ENV);
 function loadEnvFile() {
@@ -20,7 +20,6 @@ loadEnvFile();
 
 const { sequelize, db } = require("./src/config/dbConnection");
 const errorHandler = require('./src/helpers/errorHandler');
-const auth = require('./src/middleware/adminAuth');
 
 const port = process.env.PORT || 3000;
 const secretKey = process.env.SESSION_SECRET_KEY;
